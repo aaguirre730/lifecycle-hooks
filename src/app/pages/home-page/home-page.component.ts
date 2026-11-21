@@ -1,4 +1,5 @@
 import { afterNextRender, afterRender, Component, effect, OnChanges, OnInit, signal } from '@angular/core';
+import { TitleComponent } from '../../components/title/title.component';
 
 
 const log = (... messages:string[]) => {
@@ -7,7 +8,7 @@ const log = (... messages:string[]) => {
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [TitleComponent],
   templateUrl: './home-page.component.html',
 })
 
@@ -20,9 +21,9 @@ export class HomePageComponent implements OnInit, OnChanges {
   constructor(){
     log('Constructor','Se ejecuta cuando Angular instancia el componente.');
 
-    setTimeout(() => {
-      this.signalTradicionalProperty.set('Leonel Messi');
-    }, 2000);
+    //setTimeout(() => {
+    //  this.signalTradicionalProperty.set('Leonel Messi');
+    //}, 2000);
   }
 
   changeTradicional() {
