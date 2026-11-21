@@ -19,6 +19,10 @@ export class HomePageComponent implements OnInit, OnChanges {
 
   constructor(){
     log('Constructor','Se ejecuta cuando Angular instancia el componente.');
+
+    setTimeout(() => {
+      this.signalTradicionalProperty.set('Leonel Messi');
+    }, 2000);
   }
 
   changeTradicional() {
